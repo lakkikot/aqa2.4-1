@@ -36,7 +36,7 @@ out/
 ### Stuff ###
 .allure/
 node_modules/
-!./artifacts/app-ibank-build-for-testers.jar
+!/artifacts/app-ibank-build-for-testers.jar
 
 ### Exclusions ###
 HELP.md
