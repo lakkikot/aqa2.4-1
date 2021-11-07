@@ -79,7 +79,7 @@ public class TransferMoneyTest {
 
         var expected = startBalance + amount; // на 2 карте должно прибавиться на количество amount
         assertEquals(expected, dashboardPage.getSecondCardBalance());
-//        assertTrue(dashboardPage.getFirstCardBalance() > 0); // на 1 карте не ушло в минус - issue#1
+        assertTrue(dashboardPage.getFirstCardBalance() > 0); // на 1 карте не ушло в минус - issue#1
     }
 
     @Test
@@ -97,7 +97,7 @@ public class TransferMoneyTest {
 
         transferPage.addMoneyToSecondCard("1000"); // переводим ещё 1000
 
-      //  assertEquals(transitBalance, dashboardPage.getSecondCardBalance()); //баланс не должен меняться - issue#2
+        assertEquals(transitBalance, dashboardPage.getSecondCardBalance()); //баланс не должен меняться - issue#2
 
     }
 
