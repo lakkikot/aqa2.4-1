@@ -10,8 +10,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class DashboardPage {
     private SelenideElement heading = $("[data-test-id=dashboard]");
 
- //   private ElementsCollection cards = $$(".list__item");
-
     private SelenideElement firstCard = $("li:nth-child(1) > div");
     private SelenideElement secondCard = $("li:nth-child(2) > div");
 
@@ -38,6 +36,16 @@ public class DashboardPage {
     public int getSecondCardBalance() {
         var text = secondCard.text();
         return extractBalance(text);
+    }
+
+    public TransferPage toFirstCard() {
+        firstCard.find("[data-test-id=action-deposit]").click(); // кликаем "Пополнить" нпротив 1 карты
+        return new TransferPage();
+    }
+
+    public TransferPage toSecondCard() {
+        secondCard.find("[data-test-id=action-deposit]").click(); // кликаем "Пополнить" напротив 2 карты
+        return new TransferPage();
     }
 
 }
